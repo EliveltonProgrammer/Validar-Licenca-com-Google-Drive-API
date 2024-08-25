@@ -256,7 +256,7 @@ static bool ValidateLocalDefaultLicense()
             var driveService = new DriveService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
-                ApplicationName = "storeconnectupdate"
+                ApplicationName = "id do projeto API"
             });
 
             // Define o critério de busca do arquivo
