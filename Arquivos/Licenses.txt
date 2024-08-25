@@ -1,0 +1,11 @@
+[LICENSEAUTHORIZATION]
+cnpj=
+authorization=1
+
+[LICENSEAUTHORIZATION]
+cnpj=
+authorization=1
+
+[LICENSEAUTHORIZATION]
+cnpj=
+authorization=0
