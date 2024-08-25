@@ -1,6 +1,6 @@
 //Definir Globalmente as variáveis:
 static string licenseFilePath = @"C:\Program Files\seu-sistema\seu-arquivo-Licenca.ini";
-static string folderId = ""; // ID da pasta no Drive onde os arquivos de Licença estão armazenados
+static string folderId = ""; // sua ID da pasta onde os arquivos de Licença estão armazenados no Drive
  
 static bool ValidateLocalDefaultLicense()
     {
