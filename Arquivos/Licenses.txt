@@ -1,3 +1,5 @@
+Esse arquivo hospede na pasta do Drive escolhida
+
 [LICENSEAUTHORIZATION]
 cnpj=
 authorization=1
