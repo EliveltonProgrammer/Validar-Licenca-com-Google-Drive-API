@@ -29,7 +29,7 @@ static bool ValidateLocalDefaultLicense()
         string LicSoftware = lines.Length > 3 ? lines[3].Trim() : "";
         string LicVersaoSoftware = lines.Length > 4 ? lines[4].Trim() : "";
 
-        // Verificação dos dados da Licença (exemplo do que precisa conter esses dados dentro de uma dll para impossibilitar a sua abertura normalmente)
+        // Verificação dos dados da Licença (exemplo do que pode conter de parametros dentro de uma dll para impossibilitar a sua abertura normalmente)
         if (LicEmpresa != "informacao1=" &&
             LicCnpjEmpresa != "informacao2=" &&
             LicDeveloper != "informacao3=" &&
