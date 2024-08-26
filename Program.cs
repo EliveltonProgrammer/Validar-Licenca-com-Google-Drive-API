@@ -38,7 +38,7 @@ public static void Main()
 "Contate o Suporte para validação manual da Licença de uso, utilizando facilmente o QRCODE Whatsapp. Obrigado!", "Licença de uso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         frmSupport formSupport = new frmSupport();
-        formSupport.ShowDialog(); // Isso faz com que o formulário fique em primeiro plano até ser fechado
+        formSupport.ShowDialog();
 
         return;
     }
