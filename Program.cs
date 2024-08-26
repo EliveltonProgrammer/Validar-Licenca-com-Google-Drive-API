@@ -29,12 +29,12 @@ static bool ValidateLocalDefaultLicense()
         string LicSoftware = lines.Length > 3 ? lines[3].Trim() : "";
         string LicVersaoSoftware = lines.Length > 4 ? lines[4].Trim() : "";
 
-        // Verificação dos dados da Licença
-        if (LicEmpresa != "LicEmpresa=Connect Automation" ||
-            LicCnpjEmpresa != "LicCnpjEmpresa=null" ||
-            LicDeveloper != "LicDeveloper=Elivelton Almeida" ||
-            LicSoftware != "LicSoftware=StoreConnect Software" ||
-            LicVersaoSoftware != "LicVersaoSoftware=2023.1.1.100")
+        // Verificação dos dados da Licença (exemplo do que precisa conter esses dados dentro de uma dll para impossibilitar a sua abertura normalmente)
+        if (LicEmpresa != "informacao1=" &&
+            LicCnpjEmpresa != "informacao2=" &&
+            LicDeveloper != "informacao3=" &&
+            LicSoftware != "informacao4=" &&
+            LicVersaoSoftware != "informacao5=")
         {
             MessageBox.Show("Licença local inválida!", "Validação Licença", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
@@ -304,7 +304,7 @@ static bool ValidateLocalDefaultLicense()
             var driveService = new DriveService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
-                ApplicationName = "storeconnectupdate"
+                ApplicationName = "seu nome projeto API"
             });
 
             // Define o critério de busca do arquivo
