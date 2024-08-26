@@ -12,7 +12,7 @@ public static void Main()
     // Verifica se o programa já está em execução
     if (IsAlreadyRunning())
     {
-        MessageBox.Show("StoreConnect Software já está em execução!", "Gerenciamento de Processos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        MessageBox.Show("Software já está em execução!", "Gerenciamento de Processos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         return;
     }
 
