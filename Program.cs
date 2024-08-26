@@ -20,7 +20,8 @@ static bool ValidateLocalDefaultLicense()
             }
         }
 
-        // Leitura do primeiro arquivo de Licença encontrado (minha estrutura dentro do arquivo Local)
+         // Verificação dos dados da Licença (exemplo do que pode conter de parametros dentro de uma dll. A dll servirá para impossibilitar a sua abertura normalmente)
+        // Leitura do primeiro arquivo de Licença encontrado
         string firstLicenseFile = licenseFilePaths.FirstOrDefault(File.Exists);
         string[] lines = File.ReadAllLines(firstLicenseFile);
         string LicEmpresa = lines.Length > 0 ? lines[0].Trim() : "";
@@ -29,7 +30,6 @@ static bool ValidateLocalDefaultLicense()
         string LicSoftware = lines.Length > 3 ? lines[3].Trim() : "";
         string LicVersaoSoftware = lines.Length > 4 ? lines[4].Trim() : "";
 
-        // Verificação dos dados da Licença (exemplo do que pode conter de parametros dentro de uma dll para impossibilitar a sua abertura normalmente)
         if (LicEmpresa != "informacao1=" &&
             LicCnpjEmpresa != "informacao2=" &&
             LicDeveloper != "informacao3=" &&
