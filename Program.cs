@@ -1,6 +1,47 @@
-//Definir Globalmente as variáveis:
-static string licenseFilePath = @"C:\Program Files\seu-sistema\seu-arquivo-Licenca.ini";
+public static class Program
+{
+ static string licenseFilePath = @"C:\Program Files\seu-sistema\seu-arquivo-Licenca.ini";
 static string folderId = ""; // sua ID da pasta onde os arquivos de Licença estão armazenados no Drive
+
+ /// <summary>
+/// Ponto de entrada principal para o aplicativo.
+/// </summary>
+[STAThread]
+public static void Main()
+{
+    // Verifica se o programa já está em execução
+    if (IsAlreadyRunning())
+    {
+        MessageBox.Show("StoreConnect Software já está em execução!", "Gerenciamento de Processos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+    }
+
+    // Valida a Licença localmente
+    if (!ValidateLocalDefaultLicense())
+    {
+        MessageBox.Show("Falha na validação da Licença padrão", "Validação Licença", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
+    }
+
+    // Se houver conexão com a internet, valida a Licença online
+    if (IsInternetConnected())
+    {
+        if (!ValidateOnlineLicense())
+        {
+            MessageBox.Show("Falha na validação da Licença on-line!", "Validação Licença", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+    }
+    else
+    {
+        MessageBox.Show("Você está sem conexão com a internet! Devido a esse problema, sua Licença fica indisponível por segurança.\n" +
+"Contate o Suporte para validação manual da Licença de uso, utilizando facilmente o QRCODE Whatsapp. Obrigado!", "Licença de uso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        frmSupport formSupport = new frmSupport();
+        formSupport.ShowDialog(); // Isso faz com que o formulário fique em primeiro plano até ser fechado
+
+        return;
+    }
  
 static bool ValidateLocalDefaultLicense()
     {
